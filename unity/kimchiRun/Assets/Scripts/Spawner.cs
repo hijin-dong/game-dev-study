@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
         Invoke("Spawn", Random.Range(minSpawnDelay, maxSpawnDelay));
     }
 
-    void Spawn()
+    void Spawn() 
     {
         GameObject randomObject = gameObjects[Random.Range(0, gameObjects.Length)];
         Instantiate(randomObject, transform.position, Quaternion.identity);

@@ -347,8 +347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b09f190a59080114ca0393edb90710d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnDelay: 3
-  maxSpawnDelay: 5
+  minSpawnDelay: 9
+  maxSpawnDelay: 15
   gameObjects:
   - {fileID: 8871014050379950998, guid: 1422bed7bd0cacb4d98e61887a146deb, type: 3}
 --- !u!4 &418244397
@@ -758,8 +758,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b09f190a59080114ca0393edb90710d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnDelay: 3
-  maxSpawnDelay: 5
+  minSpawnDelay: 7
+  maxSpawnDelay: 9
   gameObjects:
   - {fileID: 7991115218073988676, guid: 528ada56a90730b46935b81bcd70c72f, type: 3}
   - {fileID: 7991115218073988676, guid: 3fe73c249d98e2b45849f4e5fef08791, type: 3}
@@ -929,8 +929,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b09f190a59080114ca0393edb90710d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnDelay: 3
-  maxSpawnDelay: 5
+  minSpawnDelay: 5
+  maxSpawnDelay: 7
   gameObjects:
   - {fileID: 9055950766458274041, guid: 072fbe9b9e58ec146a4b210f0750fb29, type: 3}
   - {fileID: 2471603054715718205, guid: 33a866f95ef6f7c4bb8056368597a93e, type: 3}

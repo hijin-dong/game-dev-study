@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
 
     private bool isGrounded = true;
 
+    private int lives = 3;
+    private bool isInvincible = false;
     void Start()
     {
      
@@ -27,6 +29,27 @@ public class Player : MonoBehaviour
             isGrounded = false;
             PlayerAnimator.SetInteger("State", 1);
         }
+    }
+
+    void Hit()
+    {
+        lives--;
+    }
+
+    void Heal()
+    {
+        lives = Mathf.Min(3, lives + 1);
+    }
+
+    void StartInvincible()
+    {
+        isInvincible = true;
+        Invoke("StopInvincible", 5f);
+    }
+
+    void StopInvincible()
+    {
+        isInvincible = false;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -43,15 +66,19 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "enemy")
         {
-
+            if (!isInvincible)
+                Destroy(collision.gameObject);
+            Hit();
         }
         else if (collision.gameObject.tag == "food")
         {
-
+            Destroy(collision.gameObject);
+            Heal();
         }
         else if (collision.gameObject.tag == "golden")
         {
-
+            Destroy(collision.gameObject);
+            StartInvincible();
         }
     }
 }

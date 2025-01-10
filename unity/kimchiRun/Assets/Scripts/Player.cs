@@ -11,9 +11,12 @@ public class Player : MonoBehaviour
     [Header("References")]
     public Rigidbody2D PlayerRigidBody;
     public Animator PlayerAnimator;
+    public BoxCollider2D PlayerCollider;
 
     private bool isGrounded = true;
 
+    private int lives = 3;
+    private bool isInvincible = false;
     void Start()
     {
      
@@ -27,6 +30,36 @@ public class Player : MonoBehaviour
             isGrounded = false;
             PlayerAnimator.SetInteger("State", 1);
         }
+    }
+
+    void KillPlayer()
+    {
+        PlayerCollider.enabled = false; // 체크박스 해제
+        PlayerAnimator.enabled = false;
+        PlayerRigidBody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+    }
+
+    void Hit()
+    {
+        lives--;
+        if (lives == 0)
+            KillPlayer();
+    }
+
+    void Heal()
+    {
+        lives = Mathf.Min(3, lives + 1);
+    }
+
+    void StartInvincible()
+    {
+        isInvincible = true;
+        Invoke("StopInvincible", 5f);
+    }
+
+    void StopInvincible()
+    {
+        isInvincible = false;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -43,15 +76,19 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "enemy")
         {
-
+            if (!isInvincible)
+                Destroy(collision.gameObject);
+            Hit();
         }
         else if (collision.gameObject.tag == "food")
         {
-
+            Destroy(collision.gameObject);
+            Heal();
         }
         else if (collision.gameObject.tag == "golden")
         {
-
+            Destroy(collision.gameObject);
+            StartInvincible();
         }
     }
 }

@@ -14,9 +14,14 @@ public class Spawner : MonoBehaviour
     // Start에서 처음 Spawn 호출,
     // 이후부터는 Spawn이 자기 자신을 호출
 
-    void Start()
+    void OnEnable() // 기존 Start 함수와 달리 오브젝트가 활성화될 때 호출됨
     {
         Invoke("Spawn", Random.Range(minSpawnDelay, maxSpawnDelay));
+    }
+
+    void OnDisable()
+    {
+        CancelInvoke();
     }
 
     void Spawn() 

@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [Header("References")]
     public Rigidbody2D PlayerRigidBody;
     public Animator PlayerAnimator;
+    public BoxCollider2D PlayerCollider;
 
     private bool isGrounded = true;
 
@@ -31,9 +32,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    void KillPlayer()
+    {
+        PlayerCollider.enabled = false; // 체크박스 해제
+        PlayerAnimator.enabled = false;
+        PlayerRigidBody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+    }
+
     void Hit()
     {
         lives--;
+        if (lives == 0)
+            KillPlayer();
     }
 
     void Heal()

@@ -18,7 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Update()
     { 
-        meshRenderer.material.mainTextureOffset += new Vector2(scrollSpeed * Time.deltaTime, 0);
+        meshRenderer.material.mainTextureOffset += new Vector2(scrollSpeed * GameManager.Instance.CalculateGameSpeed() / 20 * Time.deltaTime, 0);
 
     }
 }

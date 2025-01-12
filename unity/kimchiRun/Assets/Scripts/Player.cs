@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D PlayerRigidBody;
     public Animator PlayerAnimator;
     public BoxCollider2D PlayerCollider;
+    public SpriteRenderer PlayerSpriteRenderer;
 
     private bool isGrounded = true;
 
@@ -29,6 +30,16 @@ public class Player : MonoBehaviour
             isGrounded = false;
             PlayerAnimator.SetInteger("State", 1);
         }
+    }
+
+    public void MakePlayerOpaque()
+    {
+        PlayerSpriteRenderer.color = new Color(1f, 1f, 1f, .5f);
+    }
+
+    public void MakePlayerSolid()
+    {
+        PlayerSpriteRenderer.color = new Color(1f, 1f, 1f, 1f);
     }
 
     public void KillPlayer()
@@ -51,12 +62,14 @@ public class Player : MonoBehaviour
     void StartInvincible()
     {
         isInvincible = true;
+        MakePlayerOpaque();
         Invoke("StopInvincible", 5f);
     }
 
     void StopInvincible()
     {
         isInvincible = false;
+        MakePlayerSolid();
     }
 
     void OnCollisionEnter2D(Collision2D collision)

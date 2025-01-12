@@ -55,6 +55,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public float CalculateGameSpeed()
+    {
+        if (State != GameState.Playing)
+            return 30f;
+        float speed = 30f + 0.5f * Mathf.Floor(CalculateScore() / 10f);
+
+        return Mathf.Min(speed, 20f);
+    }
+
     int GetHighScore()
     {
         return PlayerPrefs.GetInt("highScore");

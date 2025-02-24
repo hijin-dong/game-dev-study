@@ -216,6 +216,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &904720855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6260337907948290910, guid: 2fbd91093195df8469c5329a8aacbeb0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2692071319790943212}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &904720859
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904720855}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Height: 1.4
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1 &2092258074
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +345,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 769166000680059691, guid: 2fbd91093195df8469c5329a8aacbeb0,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 769166000680059691, guid: 2fbd91093195df8469c5329a8aacbeb0,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
     - target: {fileID: 6260337907948290910, guid: 2fbd91093195df8469c5329a8aacbeb0,
         type: 3}
       propertyPath: m_Name
@@ -376,10 +415,19 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 4a658317f3fb5364bb68ee4792dea2aa, type: 2}
+    - target: {fileID: 6260337907957690518, guid: 2fbd91093195df8469c5329a8aacbeb0,
+        type: 3}
+      propertyPath: m_AnimatePhysics
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6260337907948290910, guid: 2fbd91093195df8469c5329a8aacbeb0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 904720859}
   m_SourcePrefab: {fileID: 100100000, guid: 2fbd91093195df8469c5329a8aacbeb0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float turnSpeed = 20f;
+    public AudioSource stepSound;
 
     Animator m_Animator;
     Rigidbody m_Rigidbody;
@@ -30,9 +31,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (isWalking)
         {
-            Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
-            m_Rotation = Quaternion.LookRotation(desiredForward);
+            if (!stepSound.isPlaying)
+                stepSound.Play();
         }
+        else
+            stepSound.Stop ();
+
+        Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
+        m_Rotation = Quaternion.LookRotation(desiredForward);
     }
 
     void OnAnimatorMove()

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameEnding : MonoBehaviour
 {
     public float fadeDuration = 1f;
-    public float displayImageDuration = 1f;
+    public float displayImageDuration = 5f;
 
     public GameObject player;
     public CanvasGroup exitBackgroundImageCanvasGroup;

@@ -6,7 +6,7 @@ public class NameInput : MonoBehaviour
 {
     public TMP_InputField playerNameInput;
     public bool isClicked = false;
-    public string playerName = "";
+    public static string playerName = "";
 
     // Update is called once per frame
     void Update()

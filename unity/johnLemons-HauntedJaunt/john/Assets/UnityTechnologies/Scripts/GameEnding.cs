@@ -9,6 +9,7 @@ public class GameEnding : MonoBehaviour
     public GameObject player;
     public CanvasGroup exitBackgroundImageCanvasGroup;
     public CanvasGroup caughtBackgroundImageCanvasGroup;
+    public CanvasGroup rankingBackgroundImageCanvasGroup;
     public AudioSource exitAudio;
     public AudioSource caughtAudio;
 
@@ -60,9 +61,14 @@ public class GameEnding : MonoBehaviour
         if (m_Timer > fadeDuration + displayImageDuration)
         {
             if (doRestart)
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
             else
-                Application.Quit();
+                ShowRanking(rankingBackgroundImageCanvasGroup);
         }
+    }
+
+    void ShowRanking(CanvasGroup imageCanvasGroup)
+    {
+        imageCanvasGroup.alpha = 0.8f;
     }
 }

@@ -27,7 +27,10 @@ public class GameEnding : MonoBehaviour
     void Update()
     {
         if (m_IsPlayerAtExit)
+        {
+            Timer.StopTimer();
             EndLevel(exitBackgroundImageCanvasGroup, false, exitAudio);
+        }
         else if (m_IsPlayerCaught)
             EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio);
     }

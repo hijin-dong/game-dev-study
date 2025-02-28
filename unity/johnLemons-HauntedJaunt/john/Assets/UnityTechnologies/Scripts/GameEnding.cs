@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameEnding : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameEnding : MonoBehaviour
     public CanvasGroup exitBackgroundImageCanvasGroup;
     public CanvasGroup caughtBackgroundImageCanvasGroup;
     public CanvasGroup rankingBackgroundImageCanvasGroup;
+    public static bool RankPresenter = false;
+    public TMP_Text[] textElements;
     public AudioSource exitAudio;
     public AudioSource caughtAudio;
 
@@ -58,17 +61,15 @@ public class GameEnding : MonoBehaviour
         m_Timer += Time.deltaTime;
         imageCanvasGroup.alpha = m_Timer / fadeDuration;
 
-        if (m_Timer > fadeDuration + displayImageDuration)
+        if (m_Timer > fadeDuration + displayImageDuration && !GameEnding.RankPresenter)
         {
             if (doRestart)
                 SceneManager.LoadScene(1);
             else
-                ShowRanking(rankingBackgroundImageCanvasGroup);
+            {
+                if (!RankPresenter)
+                    Ranking.ShowRanking(rankingBackgroundImageCanvasGroup, textElements);
+            }
         }
-    }
-
-    void ShowRanking(CanvasGroup imageCanvasGroup)
-    {
-        imageCanvasGroup.alpha = 0.8f;
     }
 }

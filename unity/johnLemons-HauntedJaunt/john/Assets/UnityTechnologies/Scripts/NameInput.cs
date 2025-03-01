@@ -15,7 +15,7 @@ public class NameInput : MonoBehaviour
         if (isClicked)
         {
             if (playerName.Length > 0)
-                GameStartButton.LoadGameScene();
+                LoadScene.LoadGameScene();
             else
                 isClicked = false;
         }   

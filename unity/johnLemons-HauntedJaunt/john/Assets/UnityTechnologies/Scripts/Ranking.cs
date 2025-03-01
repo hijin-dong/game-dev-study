@@ -17,8 +17,6 @@ public class Ranking : MonoBehaviour
 
     public static void ScoreSet(TMP_Text[] textElements)
     {
-        RankingBoard.Clear();
-
         string timeElapsed = Timer.TimeElapsed;
         string currentName = NameInput.playerName;
 
@@ -45,11 +43,5 @@ public class Ranking : MonoBehaviour
             PlayerPrefs.SetString(i + "BestName", RankingBoard[i].Item1);
             PlayerPrefs.SetString(i + "BestScore", RankingBoard[i].Item2);
         }
-
-        Debug.Log("Before");
-        Debug.Log(GameEnding.RankPresenter);
-        GameEnding.RankPresenter = true;
-        Debug.Log("After");
-        Debug.Log(GameEnding.RankPresenter);
     }
 }

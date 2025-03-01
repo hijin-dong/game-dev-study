@@ -11,7 +11,6 @@ public class GameEnding : MonoBehaviour
     public CanvasGroup exitBackgroundImageCanvasGroup;
     public CanvasGroup caughtBackgroundImageCanvasGroup;
     public CanvasGroup rankingBackgroundImageCanvasGroup;
-    public static bool RankPresenter = false;
     public TMP_Text[] textElements;
     public AudioSource exitAudio;
     public AudioSource caughtAudio;
@@ -61,14 +60,14 @@ public class GameEnding : MonoBehaviour
         m_Timer += Time.deltaTime;
         imageCanvasGroup.alpha = m_Timer / fadeDuration;
 
-        if (m_Timer > fadeDuration + displayImageDuration && !GameEnding.RankPresenter)
+        if (m_Timer > fadeDuration + displayImageDuration)
         {
             if (doRestart)
                 SceneManager.LoadScene(1);
             else
             {
-                if (!RankPresenter)
-                    Ranking.ShowRanking(rankingBackgroundImageCanvasGroup, textElements);
+                Ranking.ShowRanking(rankingBackgroundImageCanvasGroup, textElements);
+                return;
             }
         }
     }

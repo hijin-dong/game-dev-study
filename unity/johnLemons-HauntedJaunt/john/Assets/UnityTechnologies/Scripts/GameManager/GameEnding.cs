@@ -19,6 +19,7 @@ public class GameEnding : MonoBehaviour
     bool m_IsPlayerCaught;
     float m_Timer;
     bool m_HasAudioPlayed;
+    bool m_ShowRanking;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -66,8 +67,12 @@ public class GameEnding : MonoBehaviour
                 SceneManager.LoadScene(1);
             else
             {
-                Ranking.ShowRanking(rankingBackgroundImageCanvasGroup, textElements);
-                return;
+                if (!m_ShowRanking)
+                {
+                    m_ShowRanking = true;
+                    Ranking.ShowRanking(rankingBackgroundImageCanvasGroup, textElements);
+                    return;
+                }
             }
         }
     }

@@ -17,6 +17,8 @@ public class Ranking : MonoBehaviour
 
     public static void ScoreSet(TMP_Text[] textElements)
     {
+        RankingBoard.Clear();
+
         string timeElapsed = Timer.TimeElapsed;
         string currentName = NameInput.playerName;
 

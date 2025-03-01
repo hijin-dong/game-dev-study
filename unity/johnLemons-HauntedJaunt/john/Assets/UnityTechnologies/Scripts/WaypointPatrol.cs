@@ -24,7 +24,6 @@ public class WaypointPatrol : MonoBehaviour
 
         if (dist <= 4.5f)
         {
-            Debug.Log(dist);
             m_IsPatrol = false;
             navMeshAgent.SetDestination(player.transform.position);
         }

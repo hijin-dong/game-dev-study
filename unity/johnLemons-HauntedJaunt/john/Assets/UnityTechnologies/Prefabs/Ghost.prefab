@@ -63,6 +63,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: PointOfView
       objectReference: {fileID: 0}
+    - target: {fileID: 8736414050230438836, guid: 0ddeedfa9d0cd8c46a42664c2084ae36,
+        type: 3}
+      propertyPath: m_Height
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736414050230438836, guid: 0ddeedfa9d0cd8c46a42664c2084ae36,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736414050230438836, guid: 0ddeedfa9d0cd8c46a42664c2084ae36,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -250,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 100323568495022595}
+  player: {fileID: 0}
   waypoints: []
 --- !u!82 &5263307003432087039
 AudioSource:

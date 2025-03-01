@@ -2334,6 +2334,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gargoyle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4522735634370496004, guid: a2ec1f4bb24286d41b39d7f50778ca45,
+        type: 3}
+      propertyPath: m_Height
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046227074673152960, guid: a2ec1f4bb24286d41b39d7f50778ca45,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 5443235010627660602, guid: a2ec1f4bb24286d41b39d7f50778ca45,
         type: 3}
       propertyPath: player

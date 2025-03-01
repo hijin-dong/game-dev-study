@@ -801,7 +801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &154425465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -887,6 +887,11 @@ PrefabInstance:
       propertyPath: gameEnding
       value: 
       objectReference: {fileID: 154425467}
+    - target: {fileID: 6484706598300209178, guid: 479b14b03b08b4148a8a4f8f1f261a7a,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 904720863}
     - target: {fileID: 6484706598300209178, guid: 479b14b03b08b4148a8a4f8f1f261a7a,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -990,7 +995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &268558947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1260,6 +1265,11 @@ PrefabInstance:
       propertyPath: gameEnding
       value: 
       objectReference: {fileID: 154425467}
+    - target: {fileID: 6484706598300209178, guid: 479b14b03b08b4148a8a4f8f1f261a7a,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 904720863}
     - target: {fileID: 6484706598300209178, guid: 479b14b03b08b4148a8a4f8f1f261a7a,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -7240,6 +7250,11 @@ PrefabInstance:
       objectReference: {fileID: 154425467}
     - target: {fileID: 6484706598300209178, guid: 479b14b03b08b4148a8a4f8f1f261a7a,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 904720863}
+    - target: {fileID: 6484706598300209178, guid: 479b14b03b08b4148a8a4f8f1f261a7a,
+        type: 3}
       propertyPath: waypoints.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -7492,6 +7507,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 715938776}
     m_Modifications:
+    - target: {fileID: 2432882105452974014, guid: 479b14b03b08b4148a8a4f8f1f261a7a,
+        type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6091936658517926528, guid: 479b14b03b08b4148a8a4f8f1f261a7a,
         type: 3}
       propertyPath: player
@@ -7502,6 +7522,11 @@ PrefabInstance:
       propertyPath: gameEnding
       value: 
       objectReference: {fileID: 154425467}
+    - target: {fileID: 6484706598300209178, guid: 479b14b03b08b4148a8a4f8f1f261a7a,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 904720863}
     - target: {fileID: 6484706598300209178, guid: 479b14b03b08b4148a8a4f8f1f261a7a,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -7576,6 +7601,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122593712068994644, guid: 479b14b03b08b4148a8a4f8f1f261a7a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -21,14 +21,16 @@ public class WaypointPatrol : MonoBehaviour
     {
         float dist = CaculateDistacne(player.transform.position, transform.position);
         
-        if (dist <= 5f)
+
+        if (dist <= 4.5f)
         {
+            Debug.Log(dist);
             m_IsPatrol = false;
             navMeshAgent.SetDestination(player.transform.position);
         }
 
         else
-            navMeshAgent.SetDestination(waypoints[0].position);
+            navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
 
         if (m_IsPatrol && navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
         {

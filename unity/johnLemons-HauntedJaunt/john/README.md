@@ -1,5 +1,9 @@
 # Unity_JohnLemons-HauntedJaunt
 
+https://github.com/user-attachments/assets/d248eeaf-8340-4532-bc7e-d5f777296d3f
+
+<br>
+
 (ver.1.1) | [게임 링크](https://play.unity.com/en/games/de829216-88a1-4395-9363-3f85d89ba176/webgl-builds)
 - [존 레몬의 공포 체험 튜토리얼](https://learn.unity.com/project/jon-remonyi-gongpo-ceheom-3d-cogeubjayong?uv=2020.3) 기반으로 제작
 <br>

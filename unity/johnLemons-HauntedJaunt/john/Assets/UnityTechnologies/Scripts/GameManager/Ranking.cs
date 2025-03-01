@@ -27,7 +27,7 @@ public class Ranking : MonoBehaviour
         for (int i = 0; i < 5; i++)
             RankingBoard.Add(Tuple.Create<string, string>(PlayerPrefs.GetString(i + "BestName"), PlayerPrefs.GetString(i + "BestScore")));
 
-        RankingBoard.Sort((a, b) => string.Compare(b.Item2, a.Item2));
+        RankingBoard.Sort((a, b) => string.Compare(a.Item2, b.Item2));
 
         PlayerPrefs.DeleteAll();
 

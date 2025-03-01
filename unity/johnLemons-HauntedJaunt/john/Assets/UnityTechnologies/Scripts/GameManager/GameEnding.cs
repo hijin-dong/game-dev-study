@@ -19,7 +19,7 @@ public class GameEnding : MonoBehaviour
     bool m_IsPlayerCaught;
     float m_Timer;
     bool m_HasAudioPlayed;
-    bool m_ShowRanking;
+    static bool m_GameFinished;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,13 +30,16 @@ public class GameEnding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_IsPlayerAtExit)
+        if (m_IsPlayerAtExit && !m_GameFinished)
         {
             Timer.StopTimer();
             EndLevel(exitBackgroundImageCanvasGroup, false, exitAudio);
         }
-        else if (m_IsPlayerCaught)
+        else if (m_IsPlayerCaught && !m_GameFinished)
+        {
+            Debug.Log(m_GameFinished);
             EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -67,11 +70,10 @@ public class GameEnding : MonoBehaviour
                 SceneManager.LoadScene(1);
             else
             {
-                if (!m_ShowRanking)
+                if (!m_GameFinished)
                 {
-                    m_ShowRanking = true;
+                    m_GameFinished = true;
                     Ranking.ShowRanking(rankingBackgroundImageCanvasGroup, textElements);
-                    return;
                 }
             }
         }

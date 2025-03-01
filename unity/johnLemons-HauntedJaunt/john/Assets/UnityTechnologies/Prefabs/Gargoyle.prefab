@@ -125,7 +125,7 @@ PrefabInstance:
     - target: {fileID: 142367632602570352, guid: 0ddeedfa9d0cd8c46a42664c2084ae36,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 142367632602570352, guid: 0ddeedfa9d0cd8c46a42664c2084ae36,
         type: 3}
@@ -166,6 +166,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PointOfView
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736414050230438836, guid: 0ddeedfa9d0cd8c46a42664c2084ae36,
+        type: 3}
+      propertyPath: m_Height
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736414050230438836, guid: 0ddeedfa9d0cd8c46a42664c2084ae36,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

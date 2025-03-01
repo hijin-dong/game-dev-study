@@ -1,6 +1,6 @@
 # Unity_JohnLemons-HauntedJaunt
 
-(ver.1) | [게임 링크](https://play.unity.com/en/games/de829216-88a1-4395-9363-3f85d89ba176/webgl-builds)
+(ver.1.1) | [게임 링크](https://play.unity.com/en/games/de829216-88a1-4395-9363-3f85d89ba176/webgl-builds)
 - [존 레몬의 공포 체험 튜토리얼](https://learn.unity.com/project/jon-remonyi-gongpo-ceheom-3d-cogeubjayong?uv=2020.3) 기반으로 제작
 - 게임 시작 전 화면과 게임 방법 페이지 추가
 - 게임 종료 후에 다시 시작 및 종료 버튼 추가

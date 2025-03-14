@@ -36,6 +36,10 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 
 	if (DistanceMoved > LimitedDistance)
 	{
+		float OverShoot = DistanceMoved - LimitedDistance;
+		FString Name = GetName();
+		UE_LOG(LogTemp, Display, TEXT("%s Platform overshot by %f"), *Name, OverShoot);
+
 		FVector MoveDirection = PlatformVelocity.GetSafeNormal();
 		StartLocation += MoveDirection * LimitedDistance;
 		SetActorLocation(StartLocation);

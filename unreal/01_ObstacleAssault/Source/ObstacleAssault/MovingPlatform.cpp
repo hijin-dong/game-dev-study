@@ -32,11 +32,10 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 	FVector CurrentLocation = GetActorLocation();
 	CurrentLocation = CurrentLocation + PlatformVelocity * DeltaTime;
 	SetActorLocation(CurrentLocation);
-	float DistanceMoved = FVector::Dist(CurrentLocation, StartLocation);
 
-	if (DistanceMoved > LimitedDistance)
+	if (ShouldPlatformReturn())
 	{
-		float OverShoot = DistanceMoved - LimitedDistance;
+		float OverShoot = GetDistanceMoved() - LimitedDistance;
 		FString Name = GetName();
 		UE_LOG(LogTemp, Display, TEXT("%s Platform overshot by %f"), *Name, OverShoot);
 
@@ -48,3 +47,12 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 	}
 }
 
+bool AMovingPlatform::ShouldPlatformReturn()
+{
+	return GetDistanceMoved() > LimitedDistance;
+}
+
+float AMovingPlatform::GetDistanceMoved()
+{
+	return FVector::Dist(StartLocation, GetActorLocation());
+}

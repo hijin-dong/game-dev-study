@@ -32,4 +32,7 @@ private:
 	FVector StartLocation;
 
 	void MovePlatform(float DeltaTime);
+
+	bool ShouldPlatformReturn();
+	float GetDistanceMoved();
 };

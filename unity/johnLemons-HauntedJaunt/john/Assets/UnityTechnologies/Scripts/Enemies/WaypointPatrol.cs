@@ -21,7 +21,7 @@ public class WaypointPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dist = CaculateDistacne(player.transform.position, transform.position);
+        float dist = CaculateDistance(player.transform.position, transform.position);
 
         if (m_IsPatrol)
         {
@@ -41,7 +41,6 @@ public class WaypointPatrol : MonoBehaviour
         {
             if (dist > 4.5f)
             {
-                Debug.Log("Returning to patrol route");
                 navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
                 m_IsPatrol = true;
             }
@@ -49,7 +48,7 @@ public class WaypointPatrol : MonoBehaviour
         navMeshAgent.isStopped = false;
     }
 
-    float CaculateDistacne(Vector3 a, Vector3 b)
+    float CaculateDistance(Vector3 a, Vector3 b)
     {
         return Vector3.Distance(a, b);
     }

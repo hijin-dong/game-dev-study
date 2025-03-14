@@ -10,6 +10,8 @@ public class WaypointPatrol : MonoBehaviour
     int m_CurrentWaypointIndex;
     bool m_IsPatrol = true;
 
+    public Transform test;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,7 +29,6 @@ public class WaypointPatrol : MonoBehaviour
             {
                 m_IsPatrol = false;
                 navMeshAgent.SetDestination(player.transform.position);
-                return;
             }
 
             if (navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
@@ -40,12 +41,12 @@ public class WaypointPatrol : MonoBehaviour
         {
             if (dist > 4.5f)
             {
+                Debug.Log("Returning to patrol route");
                 navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
                 m_IsPatrol = true;
             }
         }
-
-        
+        navMeshAgent.isStopped = false;
     }
 
     float CaculateDistacne(Vector3 a, Vector3 b)

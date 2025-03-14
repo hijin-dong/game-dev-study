@@ -10,6 +10,8 @@ public class WaypointPatrol : MonoBehaviour
     int m_CurrentWaypointIndex;
     bool m_IsPatrol = true;
 
+    public Transform test;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,7 +21,7 @@ public class WaypointPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dist = CaculateDistacne(player.transform.position, transform.position);
+        float dist = CaculateDistance(player.transform.position, transform.position);
 
         if (m_IsPatrol)
         {
@@ -27,7 +29,6 @@ public class WaypointPatrol : MonoBehaviour
             {
                 m_IsPatrol = false;
                 navMeshAgent.SetDestination(player.transform.position);
-                return;
             }
 
             if (navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
@@ -44,11 +45,10 @@ public class WaypointPatrol : MonoBehaviour
                 m_IsPatrol = true;
             }
         }
-
-        
+        navMeshAgent.isStopped = false;
     }
 
-    float CaculateDistacne(Vector3 a, Vector3 b)
+    float CaculateDistance(Vector3 a, Vector3 b)
     {
         return Vector3.Distance(a, b);
     }

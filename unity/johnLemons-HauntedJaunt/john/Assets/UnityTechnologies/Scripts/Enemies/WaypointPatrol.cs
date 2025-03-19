@@ -23,29 +23,34 @@ public class WaypointPatrol : MonoBehaviour
     {
         float dist = CaculateDistance(player.transform.position, transform.position);
 
-        if (m_IsPatrol)
+        // Start to Chase
+        if (dist <= 4.5f)
         {
-            if (dist <= 4.5f)
-            {
-                m_IsPatrol = false;
-                navMeshAgent.SetDestination(player.transform.position);
-            }
-
-            if (navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
-            {
-                m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;
-                navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
-            }
+            m_IsPatrol = false;
+            navMeshAgent.SetDestination(player.transform.position);
         }
-        else
+
+        // Decide to keep chasing
+        if (!m_IsPatrol)
         {
             if (dist > 4.5f)
             {
                 navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
                 m_IsPatrol = true;
             }
+            else
+                navMeshAgent.SetDestination(player.transform.position);
         }
-        navMeshAgent.isStopped = false;
+
+        // Update Patrol Path
+        else
+        {
+            if (navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
+            {
+                m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;
+                navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
+            }
+        }
     }
 
     float CaculateDistance(Vector3 a, Vector3 b)

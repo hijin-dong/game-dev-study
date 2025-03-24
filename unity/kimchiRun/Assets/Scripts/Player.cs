@@ -87,8 +87,10 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "enemy")
         {
             if (!isInvincible)
+            {
                 Destroy(collision.gameObject);
-            Hit();
+                Hit();
+            }
         }
         else if (collision.gameObject.tag == "food")
         {

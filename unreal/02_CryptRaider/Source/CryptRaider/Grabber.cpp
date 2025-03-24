@@ -30,7 +30,10 @@ void UGrabber::BeginPlay()
 void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+}
 
+void UGrabber::Grab()
+{
 	/* Debugging Line */
 	UWorld* World = GetWorld();
 	FVector Start = GetComponentLocation();
@@ -41,17 +44,22 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 	FCollisionShape Sphere = FCollisionShape::MakeSphere(GrabRadius);
 	FHitResult HitResult;
 	bool HasHit = GetWorld()->SweepSingleByChannel(
-		HitResult, 
+		HitResult,
 		Start, End,
-		FQuat::Identity, 
+		FQuat::Identity,
 		ECC_GameTraceChannel2,
 		Sphere
-		);
-	
+	);
+
 	if (HasHit)
 	{
 		AActor* HitActor = HitResult.GetActor();
 		UE_LOG(LogTemp, Display, TEXT("%s"), *HitActor->GetActorNameOrLabel());
 	}
+}
+
+void UGrabber::Release()
+{
+	UE_LOG(LogTemp, Display, TEXT("Release!"));
 }
 

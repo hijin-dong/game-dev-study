@@ -20,9 +20,6 @@ UGrabber::UGrabber()
 void UGrabber::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// ...
-	
 }
 
 
@@ -30,15 +27,27 @@ void UGrabber::BeginPlay()
 void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+	UPhysicsHandleComponent* PhysicsHandle = GetPhysicsHandle();
+	if (PhysicsHandle == nullptr)
+		return;
+
+	FVector TargetLocation = GetComponentLocation() + GetForwardVector() * HoldDistance;
+	PhysicsHandle->SetTargetLocationAndRotation(TargetLocation, GetComponentRotation());
 }
 
 void UGrabber::Grab()
 {
+	UPhysicsHandleComponent* PhysicsHandle = GetPhysicsHandle();
+	if (PhysicsHandle == nullptr)
+		return;
+
 	/* Debugging Line */
 	UWorld* World = GetWorld();
 	FVector Start = GetComponentLocation();
 	FVector End = Start + GetForwardVector() * MaxGrabDistance;
-	DrawDebugLine(World, Start, End, FColor::Red);
+
+	// DrawDebugLine(World, Start, End, FColor::Red);
 
 	/* Check Collision + Get Collider */
 	FCollisionShape Sphere = FCollisionShape::MakeSphere(GrabRadius);
@@ -53,13 +62,29 @@ void UGrabber::Grab()
 
 	if (HasHit)
 	{
-		AActor* HitActor = HitResult.GetActor();
-		UE_LOG(LogTemp, Display, TEXT("%s"), *HitActor->GetActorNameOrLabel());
+		//AActor* HitActor = HitResult.GetActor();
+		//UE_LOG(LogTemp, Display, TEXT("%s"), *HitActor->GetActorNameOrLabel());
+
+		// Location: °´Ã¼¿¡ ´êÀº SphereÀÇ ½ÃÀÛÁ¡, ImpactPoint: ½ÇÁ¦·Î °´Ã¼¿¡ ´êÀº ÁöÁ¡
+		// DrawDebugSphere(World, HitResult.Location, 10, 10, FColor::Green, false, 5);
+		// DrawDebugSphere(World, HitResult.ImpactPoint, 10, 10, FColor::Red, false, 5);
+
+		PhysicsHandle->GrabComponentAtLocationWithRotation(
+			HitResult.GetComponent(),
+			NAME_None,
+			HitResult.ImpactPoint,
+			GetComponentRotation()
+		);
 	}
 }
 
 void UGrabber::Release()
 {
 	UE_LOG(LogTemp, Display, TEXT("Release!"));
+}
+
+UPhysicsHandleComponent* UGrabber::GetPhysicsHandle() const
+{
+	return GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
 }
 

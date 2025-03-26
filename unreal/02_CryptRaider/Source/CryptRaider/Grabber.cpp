@@ -69,8 +69,11 @@ void UGrabber::Grab()
 		// DrawDebugSphere(World, HitResult.Location, 10, 10, FColor::Green, false, 5);
 		// DrawDebugSphere(World, HitResult.ImpactPoint, 10, 10, FColor::Red, false, 5);
 
+		UPrimitiveComponent* HitComponent = HitResult.GetComponent();
+		HitComponent->WakeAllRigidBodies();
+
 		PhysicsHandle->GrabComponentAtLocationWithRotation(
-			HitResult.GetComponent(),
+			HitComponent,
 			NAME_None,
 			HitResult.ImpactPoint,
 			GetComponentRotation()

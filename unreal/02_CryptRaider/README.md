@@ -15,6 +15,10 @@ https://github.com/user-attachments/assets/60b30416-937a-412c-9413-619acd486ef0
   - 스페이스 바로 점프
 - 게임 규칙
   - 미궁 가장 깊은 곳에 있는 황금 조각상 도굴하기!
+
+<br>
+
+> [에셋 파일 내려 받은 뒤](https://www.fab.com/listings/c13bd0dc-ac4d-4595-b284-f81386b2e6ef) Content 폴더에 넣어주어야 레벨이 나타납니다.
 <br>
 
 ## To-Do-List

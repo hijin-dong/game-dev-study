@@ -14,7 +14,18 @@ class CRYPTRAIDER_API UTriggerComponent : public UBoxComponent
 {
 	GENERATED_BODY()
 
+public:	
+	UTriggerComponent();
+
 protected:
 	virtual void BeginPlay() override;
-	
+
+public:	
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+private:
+	UPROPERTY(EditAnywhere)
+	FName AcceptableActorTag;
+
+	AActor* GetAcceptableActor() const;
 };

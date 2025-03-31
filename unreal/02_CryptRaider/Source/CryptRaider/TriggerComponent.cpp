@@ -3,9 +3,34 @@
 
 #include "TriggerComponent.h"
 
+UTriggerComponent::UTriggerComponent()
+{
+	PrimaryComponentTick.bCanEverTick = true;
+}
+
 void UTriggerComponent::BeginPlay()
 {
 	Super::BeginPlay();
+}
 
-	UE_LOG(LogTemp, Display, TEXT("TEST"));
+void UTriggerComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+{
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+	AActor* ActorResult = GetAcceptableActor();
+	if (ActorResult != nullptr)
+		UE_LOG(LogTemp, Display, TEXT("%s"), *ActorResult->GetActorNameOrLabel());
+}
+
+AActor* UTriggerComponent::GetAcceptableActor() const
+{
+	TArray<AActor*> Actors;
+	GetOverlappingActors(Actors);
+
+	for (AActor* Actor : Actors)
+	{
+		if (Actor->ActorHasTag(AcceptableActorTag))
+			return Actor;
+	}
+	return nullptr;
 }

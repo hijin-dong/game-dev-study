@@ -55,11 +55,11 @@ void UGrabber::Grab()
 
 		// Location: ��ü�� ���� Sphere�� ������, ImpactPoint: ������ ��ü�� ���� ����
 		// DrawDebugSphere(World, HitResult.Location, 10, 10, FColor::Green, false, 5);
-		DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 10, 10, FColor::Red, false, 5);
+		// DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 10, 10, FColor::Red, false, 5);
 
 		UPrimitiveComponent* HitComponent = HitResult.GetComponent();
 		HitComponent->WakeAllRigidBodies();
-
+		HitResult.GetActor()->Tags.Add("Grabbed");
 		PhysicsHandle->GrabComponentAtLocationWithRotation(
 			HitComponent,
 			NAME_None,
@@ -79,6 +79,7 @@ void UGrabber::Release()
 	if (GrabbedComponent != nullptr)
 	{
 		GrabbedComponent->WakeAllRigidBodies();
+		GrabbedComponent->GetOwner()->Tags.Remove("Grabbed");
 		PhysicsHandle->ReleaseComponent();
 	}
 }

@@ -1,12 +1,6 @@
 # ObstacleAssault
 Developed with Unreal Engine 5
 
-https://github.com/user-attachments/assets/676d3ee3-d254-4eed-a78f-ca168578d19f
-
-<br>
-🎮
-<br>
-
 - 조작 방법
   - WASD 키로 이동 + 마우스로 시야 전환
   - 마우스 스크롤 클릭 시 특수 액션!

@@ -1,15 +1,6 @@
 # CryptRaider
 Developed with Unreal Engine 5
 
-https://github.com/user-attachments/assets/60b30416-937a-412c-9413-619acd486ef0
-
-<br>
-🎮
-
-
-
-<br>
-
 - 조작 방법
   - WASD 키로 이동 + 마우스로 시야 전환
   - 스페이스 바로 점프
@@ -33,13 +24,8 @@ https://github.com/user-attachments/assets/60b30416-937a-412c-9413-619acd486ef0
 ## Notes
 
 ### 레벨 수정
-
-![2025-03-14T22_51_13](https://github.com/user-attachments/assets/6eb6866a-2955-413f-bd7e-893143623b10)
-
 - 파란 네모: Grid Snap Settings > 단위 변경하면 격자 단위로 이동 가능
 - 빨간 네모: 4분할로 나누어서 작업 가능
-
-![image](https://github.com/user-attachments/assets/9cc23b54-444a-4296-8667-0f1fb07bc102)
 
 <br>
 
@@ -49,13 +35,7 @@ https://github.com/user-attachments/assets/60b30416-937a-412c-9413-619acd486ef0
 |Point Light|Spot Light|Rect Light|Directional Light|Sky Light|
 |---|---|---|---|---|
 |1광원|1광원, 방향성|면광원, 방향성|햇빛 표현용 <br> 방향성, 위치 상관 X|레벨 전체를 구로 감싸서 <br> 하늘과 지평선 시뮬레이션|
-|<img src="https://github.com/user-attachments/assets/5fb96bfe-c966-47d2-b6dc-b40d7d067d5c" width="100" height="100">|<img src="https://github.com/user-attachments/assets/90ee33fa-a8e7-486d-bb53-c1249406e13d" width="100" height="100">|<img src="https://github.com/user-attachments/assets/133c6b9d-c08e-417c-b751-5d320053c6f4" width="100" height="100">|<img src="https://github.com/user-attachments/assets/f92d0c3e-a3d5-4a3a-b416-35fbe79e06dc" width="100" height="100">|<img src="https://github.com/user-attachments/assets/6f4ebeca-b32a-4d25-babc-a660bb234629" width="100" height="100">|
 
-<br>
-
-**햇빛**
-<br>
-<img src="https://github.com/user-attachments/assets/694ba818-741e-4382-a328-09cdd84bce36" width="100" height="100">
 <br>
 
 - 일반적으로 Sphere + SkyLight + DirectionalLight 조합하여 사용
@@ -73,10 +53,6 @@ https://github.com/user-attachments/assets/60b30416-937a-412c-9413-619acd486ef0
 - Content Drawer에서 확인해보면 파일명에 Inst가 붙어있음 -> 실제 메터리얼이 아니라 텍스처와 설정값으로 이루어진 블루프린트
 - 우클릭하여 Find Parent > 클릭하여 편집기 열기 > 루멘이 지원하지 않는 Pixel Depth Offset 연결 해지 > apply
 
-|Before|After|
-|---|---|
-|<img src="https://github.com/user-attachments/assets/b9f9c04b-fc52-4bc2-85fd-83d9b6435bd9" width="100" height="100">|<img src="https://github.com/user-attachments/assets/577df465-0c9f-4900-9552-1f7253fbc2c8" width="100" height="100">|
-
 <br>
 
 ### 레벨에 Collision 설정
@@ -91,13 +67,6 @@ https://github.com/user-attachments/assets/60b30416-937a-412c-9413-619acd486ef0
   - 레벨 블루프린트 생성 버튼 > GameMode > Create > 현재 프로젝트 게임 모드 선택
   - 편집기 Details > Default Pawn Class에서 만들었던 플레이어 블루프린트 적용
   - Project Settings에서 게임모드 적용
-
-<br>
-
-### 상속과 컴포지션
-|상속 (Is-a)|컴포지션 (Has-a)|
-|----|----|
-|<img src="https://github.com/user-attachments/assets/438fad52-59d8-4acf-8d69-a9da8077c9e5" height="200">|<img src="https://github.com/user-attachments/assets/283c9cb9-3a84-4125-ab3c-60eb71e511d3" height="200">|
 
 <br>
 

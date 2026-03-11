@@ -19,11 +19,6 @@
 
 <br>
 
-> ### UPROPERTY 매크로
-![화면 캡처 2025-04-04 133335](https://github.com/user-attachments/assets/f81b3ce8-b976-4d87-af12-209b7ced05fb)
-
-<br>
-
 > ### 플레이어블 폰 설정
 - Details > Auto Possess Player > Player0으로 설정
 ※ 플레이어 숫자는 네트워크 기반 멀티플레이어가 아닌 동일 기기 내 플레이어 의미
@@ -141,4 +136,3 @@ void ATank::Move(float Value)
 UPROPERTY(EditDefaultsOnly, Category = "Combat")
 TSubclassOf<class AProjectile> ProjectileClass;
 ```
-![화면 캡처 2025-04-06 153215](https://github.com/user-attachments/assets/93989058-6b7d-4f1f-a9ae-8d994b3c5be5)

@@ -1,0 +1,8 @@
+/.git
+/.vscode
+/DerivedDataCache
+/Intermediate
+/Saved
+/Binaries
+*.sln
+*.code-workspace

@@ -1,7 +1,3 @@
-https://github.com/user-attachments/assets/15fcc23e-fa35-482b-b7f1-905b02947d98
-
-<br>
-
 ## Unity 6 Challenge (25.01.02 - 25.01.12)
 - Ver.1
   - [니꼬쌤 강의](https://www.youtube.com/watch?v=A58_FWqiekI)를 따라서 만든 Kimchi-Run 게임입니다!
